@@ -1,0 +1,13 @@
+.banner-3d {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 0.8rem;
+  }
+.spline-canvas{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+  

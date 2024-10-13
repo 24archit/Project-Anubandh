@@ -1,0 +1,59 @@
+/* TypewriterComponent.css */
+.typewriter-container {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 20px;
+    color: white; /* Set text color to white */
+    font-family: Arial, Helvetica, sans-serif;
+    animation: fade-in 2s ease-in-out;
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+  }
+  .static-text {
+    margin-right: 0.5em; /* Space between static text and typewriter text */
+    background: linear-gradient(to right, #33ffff, #0042c7); /* Your gradient colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; /* Slightly different color for distinction */
+  }
+  
+  #typewriter {
+    display: inline-block;
+  }
+  
+  /* Cursor Styling */
+  .typewriter-container .Typewriter__cursor {
+    animation: blink-cursor 1s infinite; /* Smooth cursor blink */
+    font-weight: bold;
+    font-size: 1.1em; /* Slightly larger cursor */
+  }
+  
+  @keyframes blink-cursor {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  /* Fade-in Animation for Text */
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+  }
+  
+  @media (max-width: 768px) {
+    .typewriter-container {
+      font-size: 3.5em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .typewriter-container {
+      font-size: 3.9em;
+    }
+  }
