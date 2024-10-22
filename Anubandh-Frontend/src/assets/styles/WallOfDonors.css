@@ -1,0 +1,93 @@
+body {
+    background-color: #000; /* Keeping the background black */
+  }
+  
+  .wall-of-donors-container {
+   
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .wall-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem; /* Increase font size for better visibility */
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #c08afdc3, #fbfffc); /* Blue to Black gradient */
+    -webkit-background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent; /* Make text color transparent */
+    position: relative; /* Positioning for pseudo-elements */
+    padding: 10px; /* Padding around the text */
+  }
+  .wall-heading::before {
+    content: '';
+    position: absolute; 
+    left: 0;
+    right: 0;
+    bottom: -5px; /* Positioning the shadow below */
+    height: 5px; /* Height of the shadow */
+    background: rgba(255, 255, 255, 0.2); /* White shadow for depth */
+    border-radius: 5px; /* Rounded corners for the shadow */
+    opacity: 0.7; /* Slightly transparent for effect */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .wall-heading:hover::before {
+    opacity: 1; /* Fully visible shadow on hover */
+  }
+
+  .donors-grid {
+    display: flex; /* Use Flexbox for centering */
+  flex-wrap: wrap; /* Allow wrapping of items */
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Space between donor cards */
+  margin-top: 25px;
+  margin-bottom: 20px;
+  }
+  
+  .donor-card {
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation effects */
+    width: 250px; /* Set a fixed width for uniformity */
+  }
+  
+  .donor-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+  }
+  
+  .donor-photo {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+  }
+  
+  .donor-info {
+    text-align: left;
+    color: #ffffffc1;
+  }
+  
+  .donor-name {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .donor-badge {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    margin: 5px 0;
+    font-weight: bold;
+    color: rgb(200, 134, 12);
+  }
+  
+  .donor-amount {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    color: #06e7eb; /* Highlight amount color */
+  }
+  

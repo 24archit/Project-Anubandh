@@ -1,0 +1,219 @@
+/* Styles for the donation component */
+body {
+    background-color: #000; /* Black background for the website */
+  }
+  
+  .donation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Transparent border */
+  }
+  
+  .donation-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    color: #ffffff;
+    background: linear-gradient(45deg, #ff00ff, #0077ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+  }
+  
+  .donation-description {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+  }
+  
+  .donation-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .more-details-btn, .donate-now-btn {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+  }
+  
+  /* Modal Styles */
+  .modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background-color: rgba(255, 255, 255, 0.15); /* Glass effect */
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 700px;
+    color: white;
+    text-align: left;
+    overflow-y: auto;
+    max-height: 90vh;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-inner-content {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+  
+  /* Typography and Sections */
+  .modal-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ff00ff, #0077ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .modal-description {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+  }
+  
+  /* Plan of Action - Adding unique styling for this section */
+  .plan-of-action-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #0077ff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .plan-of-action-box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .steps-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #ff00ff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 30px;
+  }
+  
+  .steps-box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .section-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .section-description {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    color: #ffffff;
+  }
+  
+  /* List styles for Steps section */
+  .steps-list {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .step-icon {
+    color: #0077ff;
+    margin-right: 10px;
+  }
+  
+  .steps-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin: 5px 0;
+    transition: background-color 0.2s ease;
+  }
+  
+  .steps-list li:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Image Gallery */
+  .image-gallery {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #ff00ff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 30px;
+  }
+  
+  .image-gallery:hover {
+    transform: translateY(-5px);
+  }
+  
+  .image-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .image-gallery img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Call to Action Button */
+  .modal-donate-btn {
+    display: block;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    background: linear-gradient(45deg, #0077ff, #ff00ff);
+  }
+  .modal-section {
+    margin-bottom: 30px; /* Space between sections */
+  }
+  
+  @media (max-width: 768px) {
+    .donation-container {
+      padding: 20px;
+    }
+  
+    .modal-content {
+      padding: 20px;
+    }
+  
+    .image-gallery-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  

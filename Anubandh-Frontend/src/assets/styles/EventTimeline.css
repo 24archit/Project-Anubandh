@@ -1,0 +1,70 @@
+.sidebar {
+    width: 250px;
+    background: linear-gradient(to bottom right, rgb(5, 18, 31), rgb(3, 144, 166)); /* Adjust gradient colors */
+    backdrop-filter: blur(15px); /* Stronger blur for glass effect */
+    border-radius: 8px;
+    margin-right: 20px;
+    padding: 20px;
+    transition: width 0.3s; /* Smooth transition for width change */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+    color: white; /* Ensure text color is white */
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px; /* Reduced size on smaller devices */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .sidebar {
+      width: 150px; /* Further reduced size for mobile devices */
+    }
+  }
+  
+  .timeline-container {
+    flex-grow: 1;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    font-family: Arial, sans-serif; /* Set the font family for the container */
+    color: white; /* Default text color */
+  }
+  
+  .timeline {
+    position: relative;
+    padding: 20px;
+    border-left: 2px solid #00f;
+  }
+  
+  .event {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white; /* Set event text color to white */
+  }
+  
+  .event.upcoming {
+    border-left: 5px solid #00f;
+  }
+  
+  .event.past {
+    border-left: 5px solid #f00;
+  }
+  
+  /* New class for the timeline title */
+  .timeline-title {
+    font-family: Arial, sans-serif; /* Set the font family for the title */
+  background: linear-gradient(to right, #0fffff, #fbfdff); /* Gradient colors */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text color transparent */
+  margin-bottom: 20px; /* Add some margin for spacing */
+  text-align: center; /* Center the text */
+  font-weight: bold; /* Make the text bold */
+  font-size: 2.5rem; /* Increase font size for better visibility */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow for thicker appearance */
+  }
+  

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,7 +14,17 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../assets/media/Logo.png";
 
-const pages = ["Home", "Events", "Donations", "Job Portal", "Network Zone", "About Us", "Contact Us"];
+// Create a mapping of page names to their respective paths
+const pagePaths = {
+  Home: "/home",
+  Events: "/events",
+  Donations: "/donations",
+  "Job Portal": "/jobportal",
+  "Network Zone": "/networkzone",
+  "About Us": "/aboutus",
+  "Contact Us": "/contactus",
+};
+
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function NavBar() {
@@ -36,7 +47,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: "black" }}>
+    <AppBar position="fixed" sx={{ backgroundColor: "black", marginBottom: "10px" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box
@@ -53,7 +64,7 @@ function NavBar() {
             variant="h6"
             noWrap
             component="a"
-            href="http://localhost:5173/home"
+            href="/home" // Updated to use a relative path
             sx={{
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
@@ -91,19 +102,23 @@ function NavBar() {
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: "block", md: "none" } }}
             >
-              {pages.map((page) => (
+              {Object.entries(pagePaths).map(([page, path]) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                  <Link to={path} style={{ textDecoration: "none", color: "inherit" }}>
+                    <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
           <Box sx={{ display: { xs: "none", md: "flex" }, ml: "auto" }}>
-            {pages.map((page) => (
+            {Object.entries(pagePaths).map(([page, path]) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
+                component={Link} // Use Link as the button component
+                to={path} // Set the to prop for navigation
                 sx={{ my: 2, mx: 1.6, color: "white", display: "block" }}
               >
                 {page}
@@ -146,4 +161,5 @@ function NavBar() {
     </AppBar>
   );
 }
+
 export default NavBar;
