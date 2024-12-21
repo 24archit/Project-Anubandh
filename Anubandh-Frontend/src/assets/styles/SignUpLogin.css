@@ -11,7 +11,10 @@ body {
     margin-top: 0.7rem;
     height: 10%;
 }
-
+.error{
+  color: rgb(187, 255, 0);
+  font-weight: bold;
+}
 .signup-container {
   display: flex;
   height: 100vh;
