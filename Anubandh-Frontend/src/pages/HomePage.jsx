@@ -1,8 +1,10 @@
 import Heading from "../components/Heading";
+import NavBar from "../components/Navbar";
 import PostTemplate from "../components/PostTemplate";
 export default function HomePage() {
   return (
     <>
+    <NavBar/>
     <Heading heading="Stay Connected: Explore Our Alumni Feed!"/>
       <PostTemplate
         username="Arijit_Singh"

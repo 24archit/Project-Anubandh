@@ -2,10 +2,10 @@ import React from 'react';
 import Typewriter from 'typewriter-effect/dist/core';
 import '../assets/styles/TypewriterComponent.css'; // For custom styles
 
-const TypewriterComponent = () => {
+const TypewriterComponent = ({text} )=> {
   React.useEffect(() => {
     new Typewriter('#typewriter', {
-      strings: ['Your Next Career Move Starts Here,', 'With Your Alumni Connections.'],
+      strings: [text],
       autoStart: true,
       loop: true,  // Keep the typing effect looping
       deleteSpeed: 60,  // Speed of deletion

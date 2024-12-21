@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../assets/styles/SignUp.css";
 import logo from "../assets/media/Logo.png";
-import ThreeDEarth from "./ThreedEarth";
+import ThreeDEarth from "../components/ThreedEarth";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({

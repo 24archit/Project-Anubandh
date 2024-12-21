@@ -1,10 +1,10 @@
 import DonationComponent from "../components/DonationComponent";
 import WallOfDonors from "../components/WallOfDonors";
-import TypewriterComponent from "../components/TypeWriter-Donation";
+import TypewriterComponent from "../components/TypewriterComponent";
 export default function HomePage() {
   return (
     <>
-      <TypewriterComponent />
+      <TypewriterComponent text="Empower Future Leaders,', 'Your Generosity Fuels Change."/>
       <WallOfDonors />
       <DonationComponent />
       <DonationComponent />
