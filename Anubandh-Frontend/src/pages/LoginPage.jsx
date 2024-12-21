@@ -73,7 +73,6 @@ const SignUp = () => {
             <option value="" disabled>Select Role</option>
             <option value="college">College</option>
             <option value="alumni">Alumni</option>
-            <option value="student">Student</option>
           </select>
 
          
