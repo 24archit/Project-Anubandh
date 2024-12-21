@@ -4,7 +4,7 @@ import Login from "./components/Login";
 import HomePage from "./pages/HomePage";
 import DonationPage from "./pages/DonationPage";
 import EventPage from "./pages/EventPage";
-import JobPortalHomePage from "./pages/JobPortal/JobPortalHomePage";
+import JobPortalHomePage from "./pages/JobPortal/JPHomePage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 function App() {
