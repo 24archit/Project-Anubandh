@@ -1,6 +1,5 @@
-/* Styles for the donation component */
 body {
-    background-color: #000; /* Black background for the website */
+    background-color: #000; 
   }
   
   .donation-container {
@@ -11,7 +10,7 @@ body {
     padding: 30px;
     background: rgba(255, 255, 255, 0.1); /* Glass effect */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+   
     border-radius: 15px;
     width: 90%;
     max-width: 600px;
@@ -55,8 +54,8 @@ body {
   }
   
   .modal-content {
-    background-color: rgba(255, 255, 255, 0.15); /* Glass effect */
-    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.15); 
+
     border-radius: 15px;
     padding: 30px;
     width: 90%;
@@ -74,7 +73,6 @@ body {
     padding-right: 10px;
   }
   
-  /* Typography and Sections */
   .modal-heading {
     font-family: 'Arial', sans-serif;
     font-size: 2rem;
@@ -92,7 +90,6 @@ body {
     margin-bottom: 30px;
   }
   
-  /* Plan of Action - Adding unique styling for this section */
   .plan-of-action-box {
     background: rgba(255, 255, 255, 0.1);
     padding: 15px;
@@ -133,7 +130,6 @@ body {
     color: #ffffff;
   }
   
-  /* List styles for Steps section */
   .steps-list {
     font-family: 'Arial', sans-serif;
     font-size: 1.1rem;
@@ -162,7 +158,7 @@ body {
     background: rgba(0, 0, 0, 0.5);
   }
   
-  /* Image Gallery */
+
   .image-gallery {
     background: rgba(255, 255, 255, 0.1);
     padding: 15px;
@@ -191,7 +187,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
   
-  /* Call to Action Button */
   .modal-donate-btn {
     display: block;
     margin-top: 20px;
@@ -200,7 +195,7 @@ body {
     background: linear-gradient(45deg, #0077ff, #ff00ff);
   }
   .modal-section {
-    margin-bottom: 30px; /* Space between sections */
+    margin-bottom: 30px; 
   }
   
   @media (max-width: 768px) {

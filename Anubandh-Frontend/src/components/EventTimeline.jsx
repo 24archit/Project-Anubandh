@@ -24,7 +24,7 @@ const EventTimeline = () => {
   const [selectedYear, setSelectedYear] = useState(2020);
   
   return (
-    <Box sx={{ display: 'flex', height: '100vh' }}>
+    <Box sx={{ display: 'flex', height: '100vh', marginTop: '5rem'}}>
       {/* Changed Paper to Box for the sidebar */}
       <Box className="sidebar">
         <Typography variant="h5" align="center">Select Year</Typography>

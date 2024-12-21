@@ -1,0 +1,23 @@
+/* CenteredButtons.css */
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+  }
+  
+  .centered-container button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .centered-container button:hover {
+    background-color: #f0f0f0;
+  }
+  

@@ -1,12 +1,9 @@
-/* Glass UI and Responsive Styling */
 .post-container {
-    background: rgba(47, 53, 55, 0.1); /* Transparent white */
+    background: rgba(47, 53, 55, 0.1); 
     border-radius: 16px;
     padding: 20px;
     margin: 20px 0;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     max-width: 600px;
     margin: auto;
@@ -44,14 +41,12 @@
     color: white;
   }
   
-  /* Caption Styling */
   .post-caption {
     color: white;
     font-size: 16px;
     margin-bottom: 15px;
   }
   
-  /* Media Section */
   .post-media {
     margin-bottom: 15px;
   }
@@ -63,7 +58,6 @@
     object-fit: cover;
   }
   
-  /* Action Buttons */
   .post-actions {
     display: flex;
     justify-content: space-around;
@@ -80,7 +74,6 @@
     color: #ff6b6b;
   }
   
-  /* Responsive Media Queries */
   @media (max-width: 768px) {
     .post-container {
       padding: 15px;

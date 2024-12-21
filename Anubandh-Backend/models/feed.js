@@ -22,8 +22,7 @@ const feedSchema = new mongoose.Schema({
     },
     college: {
         type: String,
-        required: true
-    },
+        required: true    },
     createdAt: {
         type: Date,
         default: Date.now

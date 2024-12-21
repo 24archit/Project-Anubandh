@@ -51,7 +51,7 @@ const donation= new mongoose.Schema({
                 required: true
             },
             donationDate: {
-                type: Date,
+                type: Date,          // add transaction id and other details of psyment 
                 default: Date.now 
             }
         }

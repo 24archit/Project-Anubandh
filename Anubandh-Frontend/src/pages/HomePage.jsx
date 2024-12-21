@@ -1,5 +1,5 @@
-import Heading from "../../components/Heading";
-import PostTemplate from "../../components/PostTemplate";
+import Heading from "../components/Heading";
+import PostTemplate from "../components/PostTemplate";
 export default function HomePage() {
   return (
     <>
