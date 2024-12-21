@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema({
     },
     aadharNumber: {
         type: String,
-        required: true,
         unique: true // Ensures Aadhar is unique across users
     },
     email: {
