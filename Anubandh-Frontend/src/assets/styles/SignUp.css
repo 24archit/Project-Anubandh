@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+.logo{
+    height: 10%;
+}
+
+.signup-container {
+  display: flex;
+  height: 100vh;
+  animation: fadeIn 2s ease;
+}
+
+.left-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* .random-text {
+  font-size: 1.9rem;
+  line-height: 1.8;
+} */
+
+.right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form {
+  background:  linear-gradient(to right, #333333, #B0B0B0);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+
+}
+
+.signup-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: black;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.input-field:focus {
+  border-color: #555;
+  outline: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: black;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .left-side {
+    display: none; 
+  }
+
+  .signup-form {
+    padding: 20px;
+    width: 100%;
+    max-width: 90%;
+  }
+}

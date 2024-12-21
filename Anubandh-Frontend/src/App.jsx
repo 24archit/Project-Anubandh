@@ -1,13 +1,15 @@
-import JobPortalHomePage from "./pages/JobPortal/JobPortalHomePage";
-import NavBar from "./components/Navbar";
-import HomePage from "./pages/HomePage/HomePage";
-import DonationPage from "./pages/DonationPage";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import EventPage from "./pages/EventPage";
+// import JobPortalHomePage from "./pages/JobPortal/JobPortalHomePage";
+// import NavBar from "./components/Navbar";
+// import HomePage from "./pages/HomePage/HomePage";
+// import DonationPage from "./pages/DonationPage";
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import EventPage from "./pages/EventPage";
+import SignUp from "./components/SignUp";
 function App() {
   return (
     <>
-      <Router>
+      <SignUp/>
+      {/* <Router>
       <NavBar />
       <h1>hI</h1>
       <h3>hi</h3>
@@ -24,8 +26,8 @@ function App() {
         <Route path="/contactus" element={<JobPortalHomePage />} /> */}
   
 
-      </Routes>
-    </Router>
+      {/* </Routes>
+    </Router> */} 
       {/* <PostTemplate
         username="alumni_user123"
         caption="Excited to connect with all the wonderful alumni!"
