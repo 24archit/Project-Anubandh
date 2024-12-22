@@ -144,6 +144,7 @@ function NavBar() {
                   </Typography>
                 </MenuItem>
               ))}
+              
             </Menu>
           </Box>
         </Toolbar>
