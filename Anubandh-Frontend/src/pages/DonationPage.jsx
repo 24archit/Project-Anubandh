@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <>
       <NavBar/>
-      <TypewriterComponent text="Empower Future Leaders,', 'Your Generosity Fuels Change."/>
+      <TypewriterComponent text="Empower Future Leaders, Your Generosity Fuels Change."/>
       <WallOfDonors />
       <DonationComponent />
       <DonationComponent />
