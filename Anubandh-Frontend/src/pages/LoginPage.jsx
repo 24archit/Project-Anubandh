@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../assets/styles/SignUpLogin.css";
 import logo from "../assets/media/Logo.png";
 import ThreeDEarth from "../components/ThreedEarth";
-
+import { getLogin } from "../apis/authApi";
 const SignUp = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -38,7 +38,7 @@ const SignUp = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Validate each field
@@ -55,9 +55,8 @@ const SignUp = () => {
       return;
     }
 
-    // Log formData (or send it to the backend)
-    console.log("Form Submitted:", formData);
-    alert("Logged in successfully!");
+    await getLogin(formData);
+    window.location.href = "/";
 
     // Reset form after submission
     setFormData({ email: "", password: "", role: "" });

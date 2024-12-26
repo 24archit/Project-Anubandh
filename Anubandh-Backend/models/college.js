@@ -42,11 +42,6 @@ const collegeSchema = new mongoose.Schema({
                 type: String,
                 required: true
             },
-            aadharNumber: {
-                type: String,
-                required: true,
-                unique: true
-            },
             batch: {
                 type: Number,
                 required: true 

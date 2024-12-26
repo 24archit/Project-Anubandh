@@ -37,8 +37,9 @@ router.post("/signup", async (req, res) => {
           error: "Email already registered as a college.",
         });
       }
-
-      const hashedPassword = await bcrypt.hash(password, 10);
+      // Testing without hashing password
+      //const hashedPassword = await bcrypt.hash(password, 10);
+      const hashedPassword = password;
       const newCollege = await College.create({
         name,
         address,
@@ -49,17 +50,12 @@ router.post("/signup", async (req, res) => {
       });
 
       const payload = {
-        user: { _id: newCollege._id, name: newCollege.name },
+        user: { id: newCollege._id, name: newCollege.name, type: "college" },
       };
       const authtoken = JWT.sign(payload, JWT_SECRET);
 
-      return res.status(201).json({
+      return res.status(200).json({
         success: true,
-        user: {
-          id: newCollege._id,
-          name: newCollege.name,
-          email: newCollege.email,
-        },
         authtoken,
       });
     } else if (role === "alumni") {
@@ -77,8 +73,9 @@ router.post("/signup", async (req, res) => {
           .status(404)
           .json({ success: false, error: "College not found." });
       }
-
-      const hashedPassword = await bcrypt.hash(password, 10);
+      // Testing without hashing password
+      //const hashedPassword = await bcrypt.hash(password, 10);
+      const hashedPassword = password;
       const newUser = await User.create({
         name,
         email,
@@ -89,21 +86,15 @@ router.post("/signup", async (req, res) => {
 
       const payload = {
         user: {
-          _id: newUser._id,
+          id: newUser._id,
           name: newUser.name,
-          collegeId: userCollege._id,
+          type: "alumni",
         },
       };
       const authtoken = JWT.sign(payload, JWT_SECRET);
 
-      return res.status(201).json({
+      return res.status(200).json({
         success: true,
-        user: {
-          id: newUser._id,
-          name: newUser.name,
-          email: newUser.email,
-          collegeId: userCollege._id,
-        },
         authtoken,
       });
     }
@@ -136,22 +127,26 @@ router.post("/login", async (req, res) => {
           error: "Invalid email or not registered as a college.",
         });
       }
+      // Testing without hashing password
+      // const isPasswordMatch = await bcrypt.compare(
+      //   password,
+      //   user.adminPassword
+      // );
 
-      const isPasswordMatch = await bcrypt.compare(
-        password,
-        user.adminPassword
-      );
+      const isPasswordMatch = password === user.adminPassword;
       if (!isPasswordMatch) {
         return res
           .status(402)
           .json({ success: false, error: "Invalid password." });
       }
-      const payload = { user: { id: user._id, name: user.name } };
+      const payload = {
+        user: { id: user._id, name: user.name, type: "college" },
+      };
       const authtoken = JWT.sign(payload, JWT_SECRET);
 
       return res.status(200).json({ success: true, authtoken });
     } else if (role === "alumni") {
-      // Student or Alumni Login
+      // Alumni Login
       let user = await User.findOne({ email });
       if (!user) {
         return res.status(401).json({
@@ -167,7 +162,11 @@ router.post("/login", async (req, res) => {
           .json({ success: false, error: "Invalid password." });
       }
       const payload = {
-        user: { id: user._id, name: user.name, collegeId: user.college._id },
+        user: {
+          id: user._id,
+          name: user.name,
+          type: "alumni",
+        },
       };
       const authtoken = JWT.sign(payload, JWT_SECRET);
       return res.status(200).json({ success: true, authtoken });
@@ -177,6 +176,26 @@ router.post("/login", async (req, res) => {
     return res
       .status(500)
       .json({ success: false, error: "Internal Server Error" });
+  }
+});
+
+// Verify Token Route
+router.get("/verifyauthtoken", (req, res) => {
+
+  const authHeader = req.headers["authorization"];
+  if (!authHeader) {
+    return res.status(401).json({ message: "Authorization header missing" });
+  }
+  const token = authHeader.split(" ")[1];
+
+  try {
+    const verified = JWT.verify(token, JWT_SECRET);
+    req.user = verified.user;
+    return res.status(200).json({ success: true });
+  } catch (error) {
+    return res
+      .status(400)
+      .json({ success: false, error: "Invalid JWT Token." });
   }
 });
 

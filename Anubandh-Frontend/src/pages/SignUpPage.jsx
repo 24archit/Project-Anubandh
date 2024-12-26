@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../assets/styles/SignUpLogin.css";
 import logo from "../assets/media/Logo.png";
 import ThreeDEarth from "../components/ThreedEarth";
-
+import { getSignUp } from "../apis/authApi";
 const indianStates = [
   "Andhra Pradesh",
   "Arunachal Pradesh",
@@ -71,7 +71,9 @@ const SignUp = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(value) ? "" : "Invalid email format.";
       case "password":
-        return value.length >= 8 ? "" : "Password must be at least 8 characters.";
+        return value.length >= 8
+          ? ""
+          : "Password must be at least 8 characters.";
       case "confirmPassword":
         return value !== formData.password ? "Passwords do not match." : "";
       default:
@@ -79,7 +81,7 @@ const SignUp = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Initial validation check for empty fields
@@ -88,12 +90,16 @@ const SignUp = () => {
       newErrors.confirmPassword = "Passwords do not match!";
     }
 
-    if (formData.role === "college" && (!formData.address || !formData.state || !formData.pincode)) {
+    if (
+      formData.role === "college" &&
+      (!formData.address || !formData.state || !formData.pincode)
+    ) {
       newErrors.address = "Please fill in all required fields for College!";
     }
 
     if (formData.role !== "college" && (!formData.batch || !formData.college)) {
-      newErrors.batch = "Please fill in all required fields for Students/Alumni!";
+      newErrors.batch =
+        "Please fill in all required fields for Students/Alumni!";
     }
 
     // Email, password, confirmPassword validation
@@ -109,9 +115,8 @@ const SignUp = () => {
       return;
     }
 
-    // Log formData (or send it to the backend)
-    console.log("Form Submitted:", formData);
-    alert("Form Submitted Successfully!");
+    await getSignUp(formData);
+    window.location.href = "/";
 
     // Reset form after submission
     setFormData(initialFormData);
@@ -135,7 +140,9 @@ const SignUp = () => {
             onChange={handleChange}
             required
           >
-            <option value="" disabled>Select Role</option>
+            <option value="" disabled>
+              Select Role
+            </option>
             <option value="college">College</option>
             <option value="alumni">Alumni</option>
           </select>
@@ -143,9 +150,9 @@ const SignUp = () => {
             <>
               <input
                 type="text"
-                name="college"
+                name="name"
                 placeholder="College Name"
-                value={formData.college}
+                value={formData.name}
                 onChange={handleChange}
                 className="input-field"
                 required
@@ -157,7 +164,9 @@ const SignUp = () => {
                 onChange={handleChange}
                 className="input-field"
               />
-              {errors.address && <span className="error">{errors.address}</span>}
+              {errors.address && (
+                <span className="error">{errors.address}</span>
+              )}
               <select
                 name="state"
                 className="input-field"
@@ -165,7 +174,9 @@ const SignUp = () => {
                 onChange={handleChange}
                 required
               >
-                <option value="" disabled>Select College State</option>
+                <option value="" disabled>
+                  Select College State
+                </option>
                 {indianStates.map((state, index) => (
                   <option key={index} value={state}>
                     {state}
@@ -202,7 +213,9 @@ const SignUp = () => {
                 onChange={handleChange}
                 required
               >
-                <option value="" disabled>Select State</option>
+                <option value="" disabled>
+                  Select State
+                </option>
                 {indianStates.map((state, index) => (
                   <option key={index} value={state}>
                     {state}
@@ -217,12 +230,16 @@ const SignUp = () => {
                 onChange={handleChange}
                 required
               >
-                <option value="" disabled>Select Your College</option>
+                <option value="" disabled>
+                  Select Your College
+                </option>
                 <option value="college A">College A</option>
                 <option value="college B">College B</option>
                 <option value="college C">College C</option>
               </select>
-              {errors.college && <span className="error">{errors.college}</span>}
+              {errors.college && (
+                <span className="error">{errors.college}</span>
+              )}
               <input
                 type="number"
                 name="batch"
@@ -267,9 +284,13 @@ const SignUp = () => {
             className="input-field"
             required
           />
-          {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
+          {errors.confirmPassword && (
+            <span className="error">{errors.confirmPassword}</span>
+          )}
 
-          <button type="submit" className="submit-btn">Sign Up</button>
+          <button type="submit" className="submit-btn">
+            Sign Up
+          </button>
         </form>
       </div>
     </div>
