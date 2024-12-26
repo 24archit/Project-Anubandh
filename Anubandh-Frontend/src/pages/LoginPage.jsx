@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../assets/styles/SignUpLogin.css";
 import logo from "../assets/media/Logo.png";
-import ThreeDEarth from "../components/ThreedEarth";
+import ThreeDEarth from "../assets/media/3d-earth.png";
 import { getLogin } from "../apis/authApi";
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +9,7 @@ const SignUp = () => {
     password: "",
     role: "",
   });
-  
+
   const [errors, setErrors] = useState({
     email: "",
     password: "",
@@ -30,7 +30,9 @@ const SignUp = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(value) ? "" : "Invalid email format.";
       case "password":
-        return value.length >= 8 ? "" : "Password must be at least 8 characters.";
+        return value.length >= 8
+          ? ""
+          : "Password must be at least 8 characters.";
       case "role":
         return value ? "" : "Please select a role.";
       default:
@@ -54,9 +56,13 @@ const SignUp = () => {
       setErrors(newErrors);
       return;
     }
-
-    await getLogin(formData);
-    window.location.href = "/";
+    try {
+      await getLogin(formData);
+      window.location.href = "/";
+    } catch (error) {
+      alert("Invalid email or password");
+      console.error("Error during login:", error);
+    }
 
     // Reset form after submission
     setFormData({ email: "", password: "", role: "" });
@@ -65,8 +71,9 @@ const SignUp = () => {
   return (
     <div className="signup-container">
       <div className="left-side">
-        <div className="three-d-world">
-          <ThreeDEarth />
+        <div className="visual-text">
+          <img src={ThreeDEarth}></img>
+          <h1>"Your Alumni Network Awaits..."</h1>
         </div>
       </div>
       <div className="right-side">
@@ -103,7 +110,9 @@ const SignUp = () => {
             onChange={handleChange}
             required
           >
-            <option value="" disabled>Select Role</option>
+            <option value="" disabled>
+              Select Role
+            </option>
             <option value="college">College</option>
             <option value="alumni">Alumni</option>
           </select>

@@ -199,4 +199,17 @@ router.get("/verifyauthtoken", (req, res) => {
   }
 });
 
+router.get("/collegelist", async (req, res) => {
+  const state = req.query.state;
+  try {
+    const colleges = await College.find({state: state}, "name");
+    return res.status(200).json({ success: true, colleges });
+  } catch (error) {
+    console.error(error.message);
+    return res
+      .status(500)
+      .json({ success: false, error: "Internal Server Error" });
+  }
+});
+
 module.exports = router;

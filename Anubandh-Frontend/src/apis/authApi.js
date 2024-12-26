@@ -51,3 +51,17 @@ export const verifyToken = async (authToken) => {
     throw error;
   }
 }
+
+export const getCollegeList = async (state) => {
+  try {
+    const config = {
+      method: "GET",
+      url: `${import.meta.env.VITE_SERVER_LINK}/auth/collegelist?state=${state}`,
+    };
+    const response = await axios(config);
+    return response.data;
+  } catch (error) {
+    console.error("Error during college list fetch:", error);
+    throw error;
+  }
+}

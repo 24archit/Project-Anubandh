@@ -34,6 +34,41 @@ body {
   font-size: 1.9rem;
   line-height: 1.8;
 } */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.visual-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.visual-text img {
+  max-width: 750px; /* Increased size for the image */
+  height: auto;
+  border-radius: 50%; /* Keeps the image circular */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow for emphasis */
+  animation: rotate 15s linear infinite; /* Smooth continuous rotation */
+  margin-bottom: 25px;
+}
+
+.visual-text h1 {
+  font-size: 3rem; /* Large text size */
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 2px;
+}
 
 .right-side {
   flex: 1;

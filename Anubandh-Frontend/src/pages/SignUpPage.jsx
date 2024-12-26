@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../assets/styles/SignUpLogin.css";
 import logo from "../assets/media/Logo.png";
-import ThreeDEarth from "../components/ThreedEarth";
-import { getSignUp } from "../apis/authApi";
+import ThreeDEarth from "../assets/media/3d-earth.png";
+import { getSignUp, getCollegeList } from "../apis/authApi";
+
 const indianStates = [
   "Andhra Pradesh",
   "Arunachal Pradesh",
@@ -56,12 +57,28 @@ const SignUp = () => {
 
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
+  const [state, setState] = useState("");
+  const [collegeList, setCollegeList] = useState([]);
+
+  useEffect(() => {
+    if (state) {
+      const fetchCollegeList = async () => {
+        const data = await getCollegeList(state);
+        setCollegeList(data.colleges);
+        console.log(data);
+      };
+      fetchCollegeList();
+    }
+  }, [state]);
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+    if (e.target.name === "state") {
+      setState(e.target.value);
+    }
     setErrors({ ...errors, [e.target.name]: "" }); // Reset error for that field
   };
 
@@ -125,8 +142,9 @@ const SignUp = () => {
   return (
     <div className="signup-container">
       <div className="left-side">
-        <div className="three-d-world">
-          <ThreeDEarth />
+        <div className="visual-text">
+          <img src={ThreeDEarth}></img>
+          <h1>"Your Alumni Network Awaits..."</h1>
         </div>
       </div>
       <div className="right-side">
@@ -231,11 +249,13 @@ const SignUp = () => {
                 required
               >
                 <option value="" disabled>
-                  Select Your College
+                  Select Your College (select state first)
                 </option>
-                <option value="college A">College A</option>
-                <option value="college B">College B</option>
-                <option value="college C">College C</option>
+                {collegeList.map((college, college_id) => (
+                  <option key={college_id} value={college.name}>
+                    {college.name}
+                  </option>
+                ))}
               </select>
               {errors.college && (
                 <span className="error">{errors.college}</span>
