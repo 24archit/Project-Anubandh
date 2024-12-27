@@ -65,7 +65,6 @@ const SignUp = () => {
       const fetchCollegeList = async () => {
         const data = await getCollegeList(state);
         setCollegeList(data.colleges);
-        console.log(data);
       };
       fetchCollegeList();
     }
@@ -131,9 +130,13 @@ const SignUp = () => {
       setErrors(newErrors);
       return;
     }
-
-    await getSignUp(formData);
-    window.location.href = "/";
+    try {
+      await getSignUp(formData);
+      window.location.href = "/";
+    } catch (error) {
+      alert("Error during signup. Please try again.");
+      console.error("Error during signup:", error);
+    }
 
     // Reset form after submission
     setFormData(initialFormData);
