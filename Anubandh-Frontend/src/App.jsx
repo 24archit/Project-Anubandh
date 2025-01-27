@@ -33,6 +33,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/donations" element={<DonationPage />} />
+            <Route path="/donations/:id" element={<h1>Hi</h1>} />
             <Route path="/jobportal" element={<JobPortalHomePage />} />
             <Route path="/events" element={<EventPage />} />
             <Route path="*" element={<HomePage />} />
@@ -41,6 +42,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/donations/:id" element={<h1>Hi</h1>} />
             <Route path="*" element={<LandingPage />} />
           </Routes>
         )}

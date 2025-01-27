@@ -31,37 +31,7 @@ const donorsData = [
     amount: '₹10,000',
     badge: 'Regular Donor',
     photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ed_Sheeran-6886_%28cropped%29.jpg/1200px-Ed_Sheeran-6886_%28cropped%29.jpg',
-  },
-  {
-    name: 'Ed Sheeran',
-    amount: '₹10,000',
-    badge: 'Regular Donor',
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ed_Sheeran-6886_%28cropped%29.jpg/1200px-Ed_Sheeran-6886_%28cropped%29.jpg',
-  },
-  {
-    name: 'Ed Sheeran',
-    amount: '₹10,000',
-    badge: 'Regular Donor',
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ed_Sheeran-6886_%28cropped%29.jpg/1200px-Ed_Sheeran-6886_%28cropped%29.jpg',
-  },
-  {
-    name: 'Ed Sheeran',
-    amount: '₹10,000',
-    badge: 'Regular Donor',
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ed_Sheeran-6886_%28cropped%29.jpg/1200px-Ed_Sheeran-6886_%28cropped%29.jpg',
-  },
-  {
-    name: 'Ed Sheeran',
-    amount: '₹10,000',
-    badge: 'Regular Donor',
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ed_Sheeran-6886_%28cropped%29.jpg/1200px-Ed_Sheeran-6886_%28cropped%29.jpg',
-  },
-  {
-    name: 'Ed Sheeran',
-    amount: '₹10,000',
-    badge: 'Regular Donor',
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ed_Sheeran-6886_%28cropped%29.jpg/1200px-Ed_Sheeran-6886_%28cropped%29.jpg',
-  },    
+  } 
   // Add more donor entries as needed
 ];
 
@@ -81,7 +51,7 @@ const WallOfDonors = () => {
           </div>
         ))}
       </div>
-      <h2 className="wall-heading">Thank You for Your Support</h2>
+      <h2 className="wall-heading">Thank You for Your Support !</h2>
     </div>
   );
 };

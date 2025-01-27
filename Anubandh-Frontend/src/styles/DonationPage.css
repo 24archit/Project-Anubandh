@@ -1,0 +1,21 @@
+.donation-page-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.donation-page-header button {
+  width: 400px;
+  height: 50px;
+  background-color: rgb(1, 47, 33);
+  transition: background-color 0.3s ease; 
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+.donation-page-header button:hover {
+  background-color: rgba(40, 134, 16, 0.671);
+  border: none;
+}

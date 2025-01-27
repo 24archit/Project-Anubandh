@@ -77,6 +77,7 @@ const SignUp = () => {
     });
     if (e.target.name === "state") {
       setState(e.target.value);
+      setFormData({ ...formData, college: "" });
     }
     setErrors({ ...errors, [e.target.name]: "" }); // Reset error for that field
   };

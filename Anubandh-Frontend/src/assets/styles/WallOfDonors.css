@@ -9,12 +9,12 @@ body {
   }
   
   .wall-heading {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif; /* Use Arial font for heading */
+    font-style: italic;
     font-size: 2.5rem; /* Increase font size for better visibility */
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, #c08afdc3, #fbfffc); /* Blue to Black gradient */
+    background: linear-gradient(90deg, #7318dcc3, #01092e); /* Blue to Black gradient */
     position: relative; /* Positioning for pseudo-elements */
-    padding: 10px; /* Padding around the text */
+    color: rgb(16, 190, 173);
   }
   .wall-heading::before {
     content: '';
